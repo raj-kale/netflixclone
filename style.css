@@ -1,0 +1,241 @@
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #141414;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav .logo {
+    width: 100px;
+    cursor: pointer;
+}
+
+nav .sign-in {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav .sign-in:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Main Banner */
+.main-header {
+    position: relative;
+    height: 100vh;
+    background: url('assets/images/bg (1).jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    color: white;
+    animation: fadeSlideIn 1.5s ease-in-out;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.banner-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.start-button {
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    animation: buttonBounce 1.5s infinite;
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes buttonBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Content Sections */
+.content {
+    padding: 100px 20px 20px;
+}
+
+.content-row {
+    margin: 50px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-row h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content-row-items {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.content-row-items img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content-row-items img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+}
+
+/* Rating System */
+.movie-rating {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.movie-rating .star {
+    font-size: 24px;
+    color: #bbb;
+    cursor: pointer;
+}
+
+.movie-rating .star:hover,
+.movie-rating .star.selected {
+    color: gold;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* FAQ Section Styles */
+.faq-section {
+    padding: 50px 20px;
+    background-color: #222;
+    color: white;
+}
+
+.faq-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #444;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #444;
+    color: white;
+    border-top: 1px solid #555;
+    font-size: 0.9rem;
+}
